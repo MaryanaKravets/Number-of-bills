@@ -6,9 +6,15 @@ public class Main {
 
         System.out.println("Enter a number: ");
         Scanner scanner = new Scanner(System.in);
-        Integer t = scanner.nextInt();
-        scanner.close();
-        Account account= new Account();
-        account.money(t);
+        try {
+            Integer t = scanner.nextInt();
+            System.out.println("You entered: " + t);
+            scanner.close();
+            Account account = new Account();
+            account.money(t);
+        } catch (java.util.InputMismatchException ex) {
+            System.out.println("You entered incorrect data!");
+        }
+
     }
 }
